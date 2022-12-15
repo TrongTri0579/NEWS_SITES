@@ -1,4 +1,5 @@
 const express = require("express");
+require("express-async-errors");
 const app = express();
 
 app.use(
@@ -7,8 +8,28 @@ app.use(
   })
 );
 
+app.set("views", "./views");
+app.use("/public", express.static("public"));
+
+require("./middleware/view.mdw")(app);
+require("./middleware/locals.mdw")(app);
+
 app.get("/", (req, res) => {
-  res.send("Home");
+  //res.send("Home");
+  res.render("home");
+});
+
+app.use("/categories",require('./routes/_category.router'))
+app.use("/account",require('./routes/_account.router'))
+app.use("/posts",require('./routes/_post.router'))
+
+app.use(function (req, res) {
+  res.render("404", { layout: false });
+});
+
+app.use(function (err, req, res, next) {
+  console.log(err);
+  res.status(500).render("500", { layout: false });
 });
 
 const PORT = 8000;

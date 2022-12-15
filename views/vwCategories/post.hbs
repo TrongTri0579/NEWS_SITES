@@ -1,0 +1,34 @@
+{{!-- Top bài viết nổi bật trong tuần (theo lượt view) --}}
+
+
+{{!-- Top 10 bài viết view nhiều nhất (mọi chuyên mục) --}}
+<div class="card">
+    <div class="card-header">
+        Bài viết mới nhất
+    </div>
+    <div class="card-body">
+        <div class="row ">
+            {{#each this.topView}}
+                <div class="border-top">
+                    <div class="col-4 mt-2" >
+                            <a href="#">
+                                <img src="{{small_avatar}}" class="card-img-top" alt="..."> 
+                            </a>                      
+                    </div>
+                    <div class="col-8 d-flex">
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">{{title}}</h5>
+                            </a>
+                            <p class="card-text">{{sub_content}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+
+{{!-- Top 10 bài viết mới nhất --}}
