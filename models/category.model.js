@@ -6,10 +6,10 @@ module.exports = {
   all: () => {
     return db.load(`select * from ${TBL_CATEGORIES}`);
   },
-  single: function (id) {
+  single: (id) => {
     return db.load(`select * from ${TBL_CATEGORIES} where catID = ${id}`);
   },
   detailCategories: (id) => {
-    return db.load(`SELECT * FROM ${TBL_DT_CATEGORIES} WHERE catID = ${id}`);
+    return db.load(`SELECT * FROM ${TBL_DT_CATEGORIES}`);
   },
 };

@@ -14,14 +14,11 @@ app.use("/public", express.static("public"));
 require("./middleware/view.mdw")(app);
 require("./middleware/locals.mdw")(app);
 
-app.get("/", (req, res) => {
-  //res.send("Home");
-  res.render("home");
-});
+app.use("/", require("./routes/_category.router"));
 
-app.use("/categories",require('./routes/_category.router'))
-app.use("/account",require('./routes/_account.router'))
-app.use("/posts",require('./routes/_post.router'))
+app.use("/categories", require("./routes/_category.router"));
+app.use("/account", require("./routes/_account.router"));
+app.use("/posts", require("./routes/_post.router"));
 
 app.use(function (req, res) {
   res.render("404", { layout: false });
