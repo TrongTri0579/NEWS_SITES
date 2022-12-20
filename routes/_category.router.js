@@ -8,11 +8,18 @@ router.get("/", async (req, res) => {
   const listTopWeek = await postModel.topWeek(3);
   const listTopNewPost = await postModel.topNewPost(10);
   const listTopOfEachCate = await postModel.topPostOfEachCategories(10);
-  res.render("vwCategories/post", {
+  res.render("vwCategories/home", {
     topView: listTopView,
     topWeek: listTopWeek,
     topNewPost: listTopNewPost,
     topPostOfEachCategories: listTopOfEachCate,
+  });
+});
+
+router.get("/post/:postsId", async (req, res) => {
+  const rows = await postModel.single(req.params.postsId);
+  res.render("vwCategories/post", {
+    post: rows[0],
   });
 });
 

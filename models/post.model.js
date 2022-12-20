@@ -8,7 +8,7 @@ module.exports = {
     return db.load(`select * from ${TBL_POSTS}`);
   },
   single: function (id) {
-    return db.load(`select * from ${TBL_POSTS} where postsID = ${id}`);
+    return db.load(`select * from ${TBL_POSTS} p where p.postsID = ${id}`);
   },
   topView: (top) => {
     return db.load(

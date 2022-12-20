@@ -1,93 +1,16 @@
 <div class="row p-0">
-    <div class="col-8 main">
-        {{!-- Top bài viết nổi bật trong tuần (theo lượt view) --}}
-        <div class="card-header">
-            <h4 style="color: red;">Bài viết nổi bật</h4>
-        </div>
+  <div class="container">
+    <div class="col">
+      <div class="card">
         <div class="card-body">
-            <div class="row row-cols-1 row-cols-md-3 g-4 ">
-                {{#each this.topWeek}}
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="{{small_avatar}}" class="rounded avatar" alt="{{title}}" />
-                            <div class="card-body">
-                                <h5 class="card-title">{{title}}</h5>
-                                <p class="card-text">{{sub_content}} </p>
-                            </div>
-                        </div>
-                    </div>
-                {{/each}}
-            </div>
+          <h1 class="card-title">
+            {{this.post.title}}
+          </h1>
+          <p class="card-text">
+            {{{this.post.content}}}
+          </p>
         </div>
-
-        <hr>
-
-        {{!-- Top 10 bài viết mới nhất --}}
-        <div class="card-header">
-            <h4 style="color: red;"> Bài viết mới nhất</h4>
-        </div>
-        <div class="card-body">
-            <div class="row ">
-                {{#each this.topNewPost}}
-                    <div class="col-sm-5">
-                        <img src="{{small_avatar}}" class="image-avatar rounded avatar" alt="{{title}}" width="100%" />
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="card-body">
-                            <h5 class="card-title">{{title}}</h5>
-                            <p class="card-text">{{sub_content}} </p>
-                        </div>
-                    </div>
-                    <p></p>
-                {{/each}}
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- Hiển thị top 10 chuyên mục, mỗi chuyên mục 1 bài mới nhất -->
-        <div class="card-header">
-            <h4 style="color: red;"> Bài viết - Chuyên mục</h4>
-        </div>
-        <div class="card-body">
-            <div class="row ">
-                {{#each this.topPostOfEachCategories}}
-                    <div class="col-sm-5">
-                        <img src="{{small_avatar}}" class="image-avatar rounded avatar" alt="{{title}}" width="100%" />
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="card-body">
-                            <h5 class="card-title">{{title}}</h5>
-                            <p class="card-text">{{sub_content}} </p>
-                        </div>
-                    </div>
-                    <p></p>
-                {{/each}}
-            </div>
-        </div>
+      </div>
     </div>
-
-    <div class="col-4">
-        {{!-- Top 10 bài viết view nhiều nhất (mọi chuyên mục) --}}
-        <div class="card-header">
-            <h4 style="color: red;"> Xem nhiều</h4>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                {{#each this.topView}}
-                    <div class="col-sm-5">
-                        <img src="{{small_avatar}}" class="image-avatar rounded avatar" alt="{{title}}" width="100%" />
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="card-body">
-                            <h5 class="card-title">{{title}}</h5>
-                            <p class="card-text">{{sub_content}} </p>
-                        </div>
-                    </div>
-                    <p></p>
-                {{/each}}
-            </div>
-        </div>
-    </div>
-
+  </div>
 </div>
