@@ -7,8 +7,18 @@ module.exports = {
   all: () => {
     return db.load(`select * from ${TBL_POSTS}`);
   },
-  single: function (id) {
+  single: (id) => {
     return db.load(`select * from ${TBL_POSTS} p where p.postsID = ${id}`);
+  },
+  allByCate: (id) => {
+    return db.load(
+      `SELECT * FROM ${TBL_POSTS} p join ${TBL_DT_CATEGORIES} dt on dt.detailID = p.catID WHERE dt.catID = '${id}';`
+    );
+  },
+  allByDetailCate: (id) => {
+    return db.load(
+      `SELECT * FROM ${TBL_POSTS} p join ${TBL_DT_CATEGORIES} dt on dt.detailID = p.catID WHERE dt.detailID = '${id}'`
+    );
   },
   topView: (top) => {
     return db.load(

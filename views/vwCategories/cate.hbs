@@ -1,0 +1,60 @@
+<div class="row p-0">
+  <div class="col-8 main">
+    <div class="card-header">
+      <h4 style="color: red;"> Bài viết theo cate</h4>
+    </div>
+    <div class="card-body">
+      <div class="row ">
+        {{#each this.listByCate}}
+          <div class="title">
+            <a href="/post/{{postsID}}">
+              <h5 class="card-title">{{title}}</h5>
+            </a>
+          </div>
+          <div class="col-sm-5">
+            <a href="/post/{{postsID}}">
+              <img src="{{small_avatar}}" class="image-avatar rounded avatar" alt="{{title}}" width="100%" />
+            </a>
+          </div>
+          <div class="col-sm-7">
+            <div class="sub-content">
+              <a href="/post/{{postsID}}">
+                <p class="card-text">{{sub_content}}</p>
+              </a>
+            </div>
+          </div>
+          <p></p>
+          <hr>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    {{!-- Top 10 bài viết view nhiều nhất (mọi chuyên mục) --}}
+    <div class="card-header">
+      <h4 style="color: red;">Xem nhiều</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        {{#each this.topView}}
+          <div class="col-sm-5">
+            <a href="/post/{{postsID}}">
+              <img src="{{small_avatar}}" class="image-avatar rounded avatar" alt="{{title}}" width="100%" />
+            </a>
+          </div>
+          <div class="col-sm-7">
+            <div class="card-body p-0">
+              <div class="title">
+                <a href="/post/{{postsID}}">
+                  <h6 class="card-title">{{title}}</h6>
+                </a>
+              </div>
+              <i class="fa-solid fa-message"></i>
+            </div>
+          </div>
+          <p></p>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

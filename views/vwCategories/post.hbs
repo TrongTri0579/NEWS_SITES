@@ -1,7 +1,8 @@
-<div class="row p-0">
-  <div class="container">
-    <div class="col">
-      <div class="card">
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="">
         <div class="card-body">
           <h1 class="card-title">
             {{this.post.title}}
@@ -10,6 +11,44 @@
             {{{this.post.content}}}
           </p>
         </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
+          <img
+            src="{{this.author.avatar}}"
+            class="author-avatar border border-light rounded-circle"
+            alt=""
+          />
+          {{this.author.alias}}
+          <br />
+          {{this.post.date}}
+        </div>
+      </div>
+      {{! footer }}
+      <div class="card-footer text-muted">
+        <div class="col-sm-5 me-0">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </div>
+        <div class="col-sm-7 me-0">
+          Chia sẻ
+          <i class="fab fa-facebook-f me-2" aria-hidden="true"></i>
+          <i class="fab fa-twitter me-2" aria-hidden="true"></i>
+          <i class="fa-sharp fa-solid fa-envelope"></i>
+          <i class="fa-solid fa-link"></i>
+        </div>
+      </div>
+
+      {{! Comment }}
+      <div>
+        <p>
+          Ý kiến: (
+          <label style="font-weight: normal;">
+            {{this.num_of_comment}}
+          </label>
+          )
+        </p>
       </div>
     </div>
   </div>

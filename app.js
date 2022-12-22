@@ -16,7 +16,7 @@ require("./middleware/locals.mdw")(app);
 
 app.use("/", require("./routes/_category.router"));
 
-app.use("/categories", require("./routes/_category.router"));
+//app.use("/categories", require("./routes/_category.router"));
 app.use("/account", require("./routes/_account.router"));
 app.use("/posts", require("./routes/_post.router"));
 
